@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!--Import Google Icon Font-->
+      	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      	<!--Import materialize.css-->
+      	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      	<!--Let browser know website is optimized for mobile-->
+      	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Neurophysiologie générale</title>
+    </head>
+    <body>
+        <header>
+            <img src="font/LogoFacMed.jpg" />
+        	<h1>Neurophysiologie générale</h1>
+            <a class="right" href='index.html' >
+                <div class="chip">
+                    <i class="material-icons right">power_settings_new</i> Sophie Opsommer 
+				</div>
+            </a>
+        </header>
+        <div class="row">
+            <div class="col s12 m4 l3" id="nav">
+                <div class="collection">
+                    <a href="home.html" class="collection-item">Accueil</a>
+                    <a href="#" class="collection-item active">Simulation</a>
+                    <a href="stat.html" class="collection-item">Statistiques</a>
+                    <a href="config.html" class="collection-item">Paramètre</a>
+                </div>
+            </div> <!-- class="col s12 m4 l3" id="nav" -->
+            <div class="col s12 m8 l9 offset-m4 offset-l3" id="section">
+	            <h2>Question 1 : </h2>
+	            <p> 
+	            	Votre score actuel : <spna id="score"> ../20 </span>
+	            </p>
+	            <h5>1 : </h5>
+	            <p> <div id="a1">
+	            	Veillez patienter ... </div>
+	            	<div class"radio">
+	            <!--<ul class="collection">
+                    <li class="collection-item">-->
+      					<input name="group1" type="radio" id="test1true" />
+      					<label for="test1true"><div class="chip">Correct</div></label><!--</li>
+                    <li class="collection-item">-->
+				      	<input name="group1" type="radio" id="test1false" />
+				      	<label for="test1false"><div class="chip">Erroné</div></label><!--</li>
+                </ul>-->
+                	</div>
+	            </p>
+	            <h5>2 : </h5>
+	            <p> <div id="a2">
+	            	Veillez patienter ... </div>
+	            	<div class"radio">
+	            <!--<ul class="collection">
+                    <li class="collection-item">-->
+      					<input name="group2" type="radio" id="test2true" />
+      					<label for="test2true"><div class="chip">Correct</div></label><!--</li>
+                    <li class="collection-item">-->
+				      	<input name="group2" type="radio" id="test2false" />
+				      	<label for="test2false"><div class="chip">Erroné</div></label><!--</li>
+                </ul>-->
+                	</div>
+	            </p>
+	            <h5>3 : </h5>
+	            <p> <div id="a3">
+	            	Veillez patienter ... </div>
+	            	<div class"radio">
+	            <!--<ul class="collection">
+                    <li class="collection-item">-->
+      					<input name="group3" type="radio" id="test3true" />
+      					<label for="test3true"><div class="chip">Correct</div></label><!--</li>
+                    <li class="collection-item">-->
+				      	<input name="group3" type="radio" id="test3false" />
+				      	<label for="test3false"><div class="chip">Erroné</div></label><!--</li>
+                </ul>-->
+                	</div>
+	            </p>
+
+				<a class="waves-effect waves-light btn disabled" href="#" id="btnVerify" ><i class="material-icons left">done</i>Vérifier</a>
+				<p>
+					<!--pour indiquer si la question est réussie ou non -->
+				</p>
+
+	            <a class="waves-effect waves-light btn right disabled" href="simulation2.html/"><i class="material-icons left">done_all</i>Passer à la question suivante</a> <!-- not_interested-->
+
+            </div> <!-- class="col s12 m4 l9" id="section" -->
+        </div> <!-- class="row" -->
+
+
+
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      	<script type="text/javascript" src="js/materialize.min.js"></script>
+      	<script type="text/javascript" src="js/simu.js"></script>
+
+    </body>
+</html>
