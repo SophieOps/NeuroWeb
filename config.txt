@@ -1,0 +1,41 @@
+<?php
+try
+{
+    $bdd = new PDO("mysql:host=localhost;dbname=Neuro;charset=utf8", "root", "root", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); //en local
+    // $bdd = new PDO("mysql:host=sql.hebergeur.com;dbname=mabase;charset=utf8", "pierre.durand", "s3cr3t", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); // distant
+}
+catch (Exception $e)
+{
+        die("Erreur : "" . $e->getMessage());
+}
+?>Message());
+}
+?>
+
+
+
+
+
+<?php  
+
+// 1 : on ouvre le fichier
+$monfichier = fopen('config.txt', 'r+');
+
+// 2 : on fera ici nos opérations sur le fichier...
+//lire : fgetc (char par char)
+//lire : fgets (ligne par ligne)
+//ecrire : fputs($monfichier, 'Texte à écrire');
+//placer le curseur au début du fichier : fseek($monfichier, 0); après fputs écrit au dessus du txt existant
+fputs($monfichier, '<?php
+try
+{
+    $bdd = new PDO("mysql:host=localhost;dbname=Neuro;charset=utf8", "root", "root", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); //en local
+    // $bdd = new PDO("mysql:host=sql.hebergeur.com;dbname=mabase;charset=utf8", "pierre.durand", "s3cr3t", array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); // distant
+}
+catch (Exception $e)
+{
+        die("Erreur : "" . $e->getMessage());
+}
+?>');
+// 3 : quand on a fini de l'utiliser, on ferme le fichier
+fclose($monfichier);

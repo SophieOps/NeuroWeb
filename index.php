@@ -18,30 +18,35 @@
         <title>Neurophysiologie générale</title>
     </head>
     <body>
-        <?php include("header.php"); >
+        <?php include("header.php"); ?>
         <div class="row">
             <div class="col s12 m4 l3" id="nav">
-            <?php include("menu.php"); >
+                <?php include("menu.php"); ?>
             </div> <!-- class="col s12 m4 l3" id="nav" -->
             <div class="col s12 m8 l9 offset-m4 offset-l3" id="section">
-
-            <p>
-              Bienvenue à toutes et à tous.<br />
-              Vous voici sur le site de simlation d'examen pour le cours de Neurohpysiologie générale.
-              Le vlet de navigation à gauche permet d'accéder aux différents éléments du site.<br />
-              <br />
-              NB : Si certains éléments s'affiche mal, favoriser des navigateurs à jours.<br />
-      </p>
-
+                <p>
+                Bienvenue à toutes et à tous. <br />
+                Veillez vous identifer. <br />
+                En attendant que ce module soit mis en place, veillez accéder à la page <strong>home.php </strong> .
+                </p>
+                <p>
+                    <form method="post" action="home.php">
+                        <p>
+                            Votre login : 
+                            <input type="text" name="login" value="Login" />
+                            <br />
+                            Votre mot de passe : 
+                            <input type="passeword" name="password" value="Mot de passe" />
+                            <br />
+                            <input type="submit" value="Valider" />
+                        </p>
+                    </form>
+                </p>
             </div> <!-- class="col s12 m4 l9" id="section" -->
         </div> <!-- class="row" -->
 
-
-
-
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script type="text/javascript" src="js/file1.js"></script>
 
     </body>
 </html>

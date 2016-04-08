@@ -1,3 +1,25 @@
+<?php
+// On démarre la session AVANT d'écrire du code HTML
+session_start();
+
+try
+{
+    // On se connecte à MySQL
+    $bdd = new PDO('mysql:host=localhost;dbname=Neuro;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+    // En cas d'erreur, on affiche un message et on arrête tout
+        die('Erreur : '.$e->getMessage());
+}
+// Si tout va bien, on peut continuer
+// si il n'est pas connecter, go index.php
+if (!isset($_SESSION['login']))
+{
+header('Location: index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,12 +43,7 @@
         <?php include("header.php"); ?>
         <div class="row">
             <div class="col s12 m4 l3" id="nav">
-                <div class="collection">
-                    <a href="home.html" class="collection-item">Accueil</a>
-                    <a href="simulation.html" class="collection-item">Simulation</a>
-                    <a href="stat.html" class="collection-item">Statistiques</a>
-                    <a href="#" class="collection-item active">Paramètre</a>
-                </div>
+                <?php include("menu.php"); ?>
             </div> <!-- class="col s12 m4 l3" id="nav" -->
             <div class="col s12 m8 l9 offset-m4 offset-l3" id="section">
 

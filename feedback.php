@@ -1,3 +1,6 @@
+<?php
+session_start(); // On démarre la session AVANT toute chose
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,10 +26,10 @@
         <div class="row">
             <div class="col s12 m4 l3" id="nav">
                 <div class="collection">
-                    <a href="home.html" class="collection-item">Accueil</a>
-                    <a href="simulation.html" class="collection-item">Simulation</a>
+                    <a href="index.php" class="collection-item">Accueil</a>
+                    <a href="simulation.php" class="collection-item">Simulation</a>
                     <a href="#" class="collection-item active">Statistiques</a>
-                    <a href="config.html" class="collection-item">Paramètre</a>
+                    <a href="config.php" class="collection-item">Paramètre</a>
                 </div>
             </div> <!-- class="col s12 m4 l3" id="nav" -->
             <div class="col s12 m8 l9 offset-m4 offset-l3" id="section">
