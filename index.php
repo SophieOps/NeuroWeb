@@ -32,13 +32,15 @@
                 <p>
                     <form method="post" action="home.php">
                         <p>
-                            Votre login : 
-                            <input type="text" name="login" value="Login" />
+                            <label for="login">Votre login : </label>
+                            <input type="text" name="login" id="login" placeholder="Login" autofocus required/>
                             <br />
-                            Votre mot de passe : 
-                            <input type="passeword" name="password" value="Mot de passe" />
+                            <label for="password">Votre mot de passe : </label>
+                            <input type="password" name="password" id="password" placeholder="Mot de passe" required/>
                             <br />
-                            <input type="submit" value="Valider" />
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Submit <i class="material-icons right">send</i>
+                            </button>
+                            <!--<input type="submit" value="Valider" />-->
                         </p>
                     </form>
                 </p>

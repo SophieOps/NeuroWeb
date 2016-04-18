@@ -5,7 +5,7 @@ session_start();
 try
 {
     // On se connecte à MySQL
-    $bdd = new PDO('mysql:host=localhost;dbname=Neuro;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = new PDO('mysql:host=127.0.0.1;port=8889;dbname=Neuro;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)); //'mysql:host=localhost;dbname=Neuro;charset=utf8', ...'
 }
 catch(Exception $e)
 {
@@ -18,6 +18,7 @@ if (!isset($_SESSION['login']))
 {
 header('Location: index.php');
 }
+unset($_SESSION['score']);
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +53,7 @@ header('Location: index.php');
             // On récupère les user avec le même login
             //$reponse = $bdd->query('SELECT * FROM user');
             //quand on veut utiliser des variables pour composer la requête : 
-            $req = $bdd->prepare('SELECT * FROM user WHERE login = ?');
+            $req = $bdd->prepare('SELECT * FROM User WHERE login = ?');
             $req->execute(array($_POST['login']));
 
             $i = 0;
@@ -64,15 +65,23 @@ header('Location: index.php');
                 $data['name'] = $dta['name'];
                 $data['login'] = $dta['login'];
                 $data['pswd'] = $dta['pswd'];
+                $data['ID'] = $dta['ID'];  
+                $data['FK_statut'] = $dta['FK_statut'];
             }
             echo "i = ".$i."</p>";
             if ($i == 1)
             {
                 if(($_POST['login'] === $data['login']) AND ($_POST['password'] === $data['pswd']))
                 {
+                    /*unset($_SESSION);
+                    session_unset();
+                    session_destroy(); // On quitte la session en court*/
+
                     $_SESSION['prenom'] = $data['firstname'];
                     $_SESSION['nom'] = $data['name'];
-                    $_SESSION['login'] = $data['login'];        
+                    $_SESSION['login'] = $data['login'];
+                    $_SESSION['id_login'] = $data['ID'];  
+                    $_SESSION['statut_login'] = $data['FK_statut'];     
                     //setcookie('login', $_SESSION['login'], time() + 365*24*3600, null, null, false, true);
                     echo "<p>session créée.</p>";
                 }else{

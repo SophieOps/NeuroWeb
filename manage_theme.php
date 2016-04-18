@@ -13,7 +13,7 @@ catch(Exception $e)
 }
 // Si tout va bien, on peut continuer
 // si il n'est pas connecter, go index.php
-if (!isset($_SESSION['login']))
+if (!isset($_SESSION['login']) AND !isset($_SESSION['statut_login']) AND ($_SESSION['statut_login'] != 1))
 {
 header('Location: index.php');
 }
@@ -46,45 +46,48 @@ unset($_SESSION['score']);
                 <?php include("menu.php"); ?>
             </div> <!-- class="col s12 m4 l3" id="nav" -->
             <div class="col s12 m8 l9 offset-m4 offset-l3" id="section">
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input disabled value="SophieO" id="disabled" type="text" class="validate">
-                      <label for="disabled">Login</label>
-                    <!--<input placeholder="Placeholder" id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>-->
-                  </div>
-                  <!--<div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                  </div>-->
-                </div>
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input id="password1" type="password" class="validate">
-                    <label for="password">Nouveau mot de passe</label>          
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input id="password2" type="password" class="validate">
-                    <label for="password">Nouveau mot de passe</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
-                  </div>
-                </div>
-              </form>
-            </div>
+            
+              <h2> Simulations : </h2>
+              <!--<h4> Les paramètres </h4>
+              <p> </p>-->
+              <a href="theme_add.php" class="btn-floating btn-large waves-effect waves-light teal lighten-2 right"><i class="material-icons">add</i></a>
+              <h4> Les thèmes </h4>
+              
+              <ul class="collection">
+              <?php
 
+                  $req = $bdd->query('SELECT * FROM Theme ORDER BY number ASC');
+            $i = 0;
+            $theme;
+            while ($data = $req->fetch())
+            {
+                $theme[$i]['id'] = $data['ID'];
+                $theme[$i]['number'] = $data['number'];
+                $theme[$i]['name'] = $data['name'];
+                $theme[$i]['open'] = $data['openToSimulation'];
+                $i++;
+            }
+            $req->closeCursor();
 
-
-
-        <a class="waves-effect waves-light btn" href="home.html/#saved"><i class="material-icons left">done</i>Sauvegarder</a>
+            for ($j = 0; $j < $i; $j++)
+            {
+                if($theme[$j]['open'])
+                {
+                    echo '<li class="collection-item avatar">
+                      <a href="theme.php?id='.$theme[$j]['id'].'" class="collection-item">
+                      <i class="material-icons circle">toc</i>
+                      <span class="title">'.$theme[$j]['number'].' . '.$theme[$j]['name'].' </span>
+                      <p>Il est disponible lors des simulations </p></a></li>';
+                }else{
+                    echo '<li class="collection-item avatar">
+                      <a href="theme.php?id='.$theme[$j]['id'].'" class="collection-item">
+                      <i class="material-icons circle">toc</i>
+                      <span class="title">'.$theme[$j]['number'].' . '.$theme[$j]['name'].' </span>
+                      <p>Il n\'est pas disponible lors des simulations </p></a></li>';
+                }
+            }
+            ?>
+            </ul>
 
             </div> <!-- class="col s12 m4 l9" id="section" -->
         </div> <!-- class="row" -->

@@ -23,7 +23,7 @@ header
     position: fixed;
     top: 0;
     width: 100%;
-    height: 5rem;
+    min-height: 5rem;
     z-index: 999;
 }
 header h1
@@ -31,7 +31,7 @@ header h1
     font-size: 3.5rem;
     display: inline;
 }
-header img
+img
 {
     height: 4rem;
     width: auto;
@@ -68,7 +68,17 @@ header img
     align-content: space-around; /* alignement des différentes lignes flex-start flex-end center space-between space-around stretch (par défaut) */
 }
 
-label
+header label
 {
     margin-right: 6rem;
 }
+.hidden {
+    display: none;
+}
+.visible{
+    display: block;
+}
+/*:required
+{
+    background-color: red;
+}*/

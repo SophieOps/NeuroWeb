@@ -1,4 +1,7 @@
 <?php
+
+unset($_SESSION['score']);
+
 unset($_SESSION);
 session_unset();
 session_destroy(); // On quitte la session en court
