@@ -116,8 +116,8 @@ unset($_SESSION['score']);
                             <!--<label for="open">Est-il ouvert ?</label>-->
                           </div>
                           <div class="input-field col s12">
-                            <a <?php echo 'href="theme_del.php?id='.$theme['id'].'"'; ?> type="bouton" class="btn waves-effect waves-light teal lighten-2 right" id="btnVerify1" >Supprimer</a>
-                            <input type="submit" class="btn waves-effect waves-light teal lighten-2 right" id="btnVerify1" value="Enregistrer" ></input>
+                            <a <?php echo 'href="theme_del.php?id='.$theme['id'].'"'; ?> type="bouton" class="btn waves-effect waves-light teal lighten-2 right" id="btnDel" >Supprimer</a>
+                            <input type="submit" class="btn waves-effect waves-light teal lighten-2 right" id="btnSave" value="Enregistrer" ></input>
                           </div>
                         </div>
                       </form>

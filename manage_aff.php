@@ -50,7 +50,7 @@ unset($_SESSION['score']);
                 <h3> Les affirmations : </h3>
                 <!--<h4> Les paramètres </h4>
                 <p> </p>-->
-                <a href="theme_add.php" class="btn-floating btn-large waves-effect waves-light teal lighten-2 right"><i class="material-icons">add</i></a>
+                <a href="aff_add.php" class="btn-floating btn-large waves-effect waves-light teal lighten-2 right"><i class="material-icons">add</i></a>
 
                 <ul class="collection">
                 <?php

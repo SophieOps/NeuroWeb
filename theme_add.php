@@ -90,7 +90,7 @@ unset($_SESSION['score']);
                         </div>
                       </div>
                       <div class="input-field col s12">
-                        <input type="submit" class="btn waves-effect waves-light teal lighten-2 right" id="btnVerify1" value="Enregistrer" ></input>
+                        <input type="submit" class="btn waves-effect waves-light teal lighten-2 right" id="btnSave" value="Enregistrer" ></input>
                       </div>
                     </div>
                 </form>

@@ -24,10 +24,10 @@ header('Location: index.php');
 if (isset($_GET['id']))
 {
     $id = $_GET['id'];
-    $req = $bdd->prepare('DELETE FROM Theme WHERE ID = ? ');
+    $req = $bdd->prepare('DELETE FROM Question WHERE ID = ? ');
     $req0->execute(array($id));
     
-    header('Location: manage_theme.php');
+    header('Location: manage_aff.php');
     exit();
 }
 ?>

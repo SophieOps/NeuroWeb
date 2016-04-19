@@ -93,10 +93,10 @@ if($DEBUG){ echo '<p> adresse IP : "'.$ip.'".</p>'; }
                     echo '<script> alert("Il n\'y a pas d\'id pour le login."); </script>';
                 }
 if($DEBUG){ echo '<p> id login : "'.$id_log.'".</p>'; }
-                $req0 = $bdd->prepare('INSERT INTO `Simulation`(`FK_User`) VALUES (?)');
+                /*$req0 = $bdd->prepare('INSERT INTO `Simulation`(`FK_User`) VALUES (?)');
                 $req0->execute(array($id_log));
                 $_SESSION['id_simu'] = $bdd->lastInsertId();
-                $req0->closeCursor();
+                $req0->closeCursor();*/
 
 if($DEBUG){ echo '<p> Les données ont bien été enregistrée en bdd : id simu : '.$_SESSION['id_simu'].'.</p>' ; }
 
@@ -151,10 +151,22 @@ if($DEBUG){ echo $data['txt']." - ".$questions[$i]['text']."..<br/>";}
             /*setCookie("affirmation1", "0", time() + 24*3600);
             setCookie("affirmation2", "1", time() + 24*3600);
             setCookie("affirmation3", "3", time() + 24*3600);*/
-            $_SESSION["affirmation1"] = $questions[0]['id'];
-            $_SESSION["affirmation2"] = $questions[1]['id'];
-            $_SESSION["affirmation3"] = $questions[2]['id'];
 
+            $i--;
+            $aff1 = $aff2 = $aff3 = 0;
+            $aff1 = rand(0, $i);
+            do {
+                $aff2 = rand(0, $i);
+            }while ($aff2 == $aff1);
+            do {
+                $aff2 = rand(0, $i);
+            }while (($aff3 == $aff1) OR ($aff3 == $aff2));
+
+            $_SESSION["affirmation1"] = $questions[$aff1]['id'];
+            $_SESSION["affirmation2"] = $questions[$aff2]['id'];
+            $_SESSION["affirmation3"] = $questions[$aff3]['id'];
+
+            echo 'les valeurs aléatoire des questions sont : '.$aff1.$aff2.$aff3.' et les id corrspondant : '.$_SESSION["affirmation1"].$_SESSION["affirmation2"].$_SESSION["affirmation3"];
             //echo '<form method="post" action='.$next.'>';
 
             ?>
@@ -164,7 +176,7 @@ if($DEBUG){ echo $data['txt']." - ".$questions[$i]['text']."..<br/>";}
   	            	  Votre score actuel : <span id="score"> <?php echo $_SESSION['score']; ?>/<?php echo $_SESSION['sum_question']; ?> </span>
   	            </p>
                 <fieldset id="a1">
-                    <legend>1 : <?php echo $questions[0]['text']; ?></legend> <!-- Titre du fieldset --> 
+                    <legend>1 : <?php echo $questions[$aff1]['text']; ?></legend> <!-- Titre du fieldset --> 
   	            	  <div class"radio">
                     <!-- l'att for dans le label doit-être le même que l'id de l'input-->
           					    <input name="group1" type="radio" id="test1true" value="true" />
@@ -174,7 +186,7 @@ if($DEBUG){ echo $data['txt']." - ".$questions[$i]['text']."..<br/>";}
                 	  </div>
   	            </fieldset>
   	            <fieldset id="a1">
-                    <legend>2 : <?php echo $questions[1]['text']; ?></legend> <!-- Titre du fieldset --> 
+                    <legend>2 : <?php echo $questions[$aff2]['text']; ?></legend> <!-- Titre du fieldset --> 
   	            	  <div class"radio">
         					      <input name="group2" type="radio" id="test2true" value="true"  />
            					    <label for="test2true"><div class="chip">Correct</div></label>
@@ -183,7 +195,7 @@ if($DEBUG){ echo $data['txt']." - ".$questions[$i]['text']."..<br/>";}
                 	  </div>
   	            </fieldset>
                 <fieldset id="a1">
-                    <legend>3 : <?php echo $questions[2]['text']; ?></legend> <!-- Titre du fieldset --> 
+                    <legend>3 : <?php echo $questions[$aff3]['text']; ?></legend> <!-- Titre du fieldset --> 
                     <div class"radio">
         					      <input name="group3" type="radio" id="test3true" value="true"  />
         					      <label for="test3true"><div class="chip">Correct</div></label>

@@ -83,6 +83,15 @@ if(isset($_SESSION['login']))
             <a href="manage_theme.php" class="collection-item">Gestion des thèmes</a>
             <a href="#" class="collection-item active">Gestion des affirmations</a>';
             break;
+        case "/NeuroWeb/aff.php":
+        case "/NeuroWeb/aff_add.php":
+            echo '<a href="home.php" class="collection-item">Accueil</a>
+            <a href="simulation.php" class="collection-item">Simulation</a>
+            <a href="stat.php" class="collection-item">Statistiques</a>
+            <a href="config.php" class="collection-item">Paramètre</a>
+            <a href="manage_theme.php" class="collection-item">Gestion des thèmes</a>
+            <a href="manage_aff.php" class="collection-item active">Gestion des affirmations</a>';
+            break;
 	    default:
 	        echo '<a href="index.php" class="collection-item">Accueil</a>
     		<a href="simulation.php" class="collection-item">Simulation</a>

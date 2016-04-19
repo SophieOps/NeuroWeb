@@ -1,0 +1,27 @@
+TODO : 
+
+--- effectuer la sélection aléatoire des affirmations
+
+visualiser les détails d'une affirmation
++renomer la table 'question'
+--- + modifier
+--- + ajouter
+--- + supprimer
+
+les statistiques
++ personnelles
+- en fonction d'un thème
+- évolution
+
++ de toute la classe
+- par thème
+- évolution
+- ajout en bdd
+
+
+les paramètres
++ changer la couleur 
++ changer le mdp
++ changer le login
++ changer l'email
+
