@@ -18,6 +18,8 @@ les statistiques
 - évolution
 - ajout en bdd
 
++ de l'utilisation des affirmations (pour vérifier la distribution, que toutes les affirmations sont utilisé à même fréquence)
+
 
 les paramètres
 + changer la couleur 

@@ -47,11 +47,18 @@ header('Location: index.php');
             </div> <!-- class="col s12 m4 l3" id="nav" -->
             <div class="col s12 m8 l9 offset-m4 offset-l3" id="section">
 
+            <img src="./example.drawBarChart.spacing.php">
+
+
+
+
+
+
+
+
+
             </div> <!-- class="col s12 m4 l9" id="section" -->
         </div> <!-- class="row" -->
-
-
-
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
